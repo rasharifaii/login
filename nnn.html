@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="stylesheet" href="nnn.css" />
+  <title>Document</title>
+</head>
+
+<body>
+  <button id="backButton" class="back-button" onclick="window.location.href='sss.html'">Back</button>
+
+  <div class="mmm">
+    
+    <form id="myForm" class="bbb">
+    <div class="input-group">
+        <label for="email">Your email</label>
+        <input type="email" name="email" id="email" placeholder="Email" required>
+    </div>
+
+    <div class="input-group" style="position: relative;">
+        <label for="Password">Password</label>
+        <input type="password" name="Password" id="Password" placeholder="Password" required>
+        <span id="togglePassword" style="position: absolute; top: 36px; right: 12px; cursor: pointer; color: #ccc;">👁️</span>
+
+        <label for="ConfirmPassword">Confirm Password</label>
+        <input type="password" name="ConfirmPassword" id="ConfirmPassword" placeholder="Confirm Password" required>
+        <span id="toggleePassword" style="position: absolute; top: 95px; right: 12px; cursor: pointer; color: #ccc;">👁️</span>
+
+      <button id="linkbutton" class="link-button" type="button">Confirm</button>
+    </div>
+</form>
+
+
+
+  </div>
+
+  <script>
+  
+  const togglePassword = document.getElementById('togglePassword');
+  const passwordInput = document.getElementById('Password');
+  togglePassword.addEventListener('click', function () {
+    const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+    passwordInput.setAttribute('type', type);
+    this.textContent = type === 'password' ? '👁️' : '👁️‍🗨️';
+  });
+
+  const toggleePassword = document.getElementById('toggleePassword');
+  const confirmPasswordInput = document.getElementById('ConfirmPassword');
+  toggleePassword.addEventListener('click', function () {
+    const type = confirmPasswordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+    confirmPasswordInput.setAttribute('type', type);
+    this.textContent = type === 'password' ? '👁️' : '👁️‍🗨️';
+  });
+
+  
+  
+  function isPasswordStrong(password) {
+    const regex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W_]).{8,}$/;
+    return regex.test(password);
+  }
+
+  
+  const form = document.getElementById('myForm');
+  form.addEventListener('submit', function (event) {
+    event.preventDefault();
+
+    const email = document.getElementById('email').value.trim();
+    const password = passwordInput.value.trim();
+    const confirmPassword = confirmPasswordInput.value.trim();
+
+    if (!email || !password || !confirmPassword) {
+      alert("Please fill in all the fields!");
+      return;
+    }
+
+    if (!isPasswordStrong(password)) {
+      alert("Password must be at least 8 characters long and include:\n- Uppercase letter\n- Lowercase letter\n- Number\n- Special character");
+      return;
+    }
+
+    if (password !== confirmPassword) {
+      alert("Passwords do not match!");
+      return;
+    }
+
+    
+    window.location.href = "ttt.html"; 
+  });
+</script>
+
+  
+
+</body>
+
+</html>

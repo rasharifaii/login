@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="stylesheet" href="sss.css" />
+  <title>Enter Info</title>
+</head>
+
+<body>
+  <button id="backButton" class="back-button" onclick="window.location.href='user.html'">Back</button>
+
+  <div class="ccc">
+    <form class="sss">
+      <h2>Please enter your information</h2>
+
+      <div class="input-group">
+        <label for="first-name">First Name</label>
+        <input type="text" name="first-name" id="first-name" placeholder="First Name">
+      </div>
+
+      <div class="input-group">
+        <label for="last-name">Last Name</label>
+        <input type="text" name="last-name" id="last-name" placeholder="Last Name">
+      </div>
+
+      <button id="linkbutton" class="link-button" type="button" onclick="window.location.href='nnn.html'">Next</button>
+    </form>
+  </div>
+
+  <script>
+    const backBtn = document.getElementById("backButton");
+    window.addEventListener("scroll", function () {
+      if (window.scrollY > 50) {
+        backBtn.classList.add("hide");
+      } else {
+        backBtn.classList.remove("hide");
+      }
+    });
+  </script>
+</body>
+</html>

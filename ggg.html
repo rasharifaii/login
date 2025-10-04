@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="ggg.css">
+    <title>Document</title>
+</head>
+
+<body>
+     <button id="backButton" class="back-button" onclick="window.location.href='user.html'">Back</button>
+
+  <div class="form-container">
+    <h1>Forgot Password?</h1>
+    <p>Please enter your email to reset your password.</p>
+    <input type="email" id="email" placeholder="you@example.com" required />
+    <button class="resetBtn">Send reset link</button>
+    <div class="confirmation" id="confirmation">
+      ✅ A reset link has been sent to your email!
+    </div>
+  </div>
+
+  <script>
+    const resetBtn = document.getElementById("resetBtn");
+    const confirmation = document.getElementById("confirmation");
+
+    resetBtn.addEventListener("click", function (e) {
+      e.preventDefault();
+      if (document.getElementById("email").value.trim() !== "") {
+        confirmation.style.display = "block";
+      } else {
+        confirmation.style.display = "none";
+        alert("Please enter your email address.");
+      }
+    });
+
+    const backBtn = document.getElementById("backButton");
+    window.addEventListener("scroll", function () {
+      if (window.scrollY > 50) {
+        backBtn.classList.add("hide");
+      } else {
+        backBtn.classList.remove("hide");
+      }
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,128 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f9f5f2;
+}
+.back-button {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  background-color: transparent;
+  color: #c90101;
+  border: 2px solid #c90101;
+  padding: 0.5rem 1rem;
+  border-radius: 0.375rem;
+  cursor: pointer;
+  transition: 0.3s;
+  z-index: 10;
+}
+
+.back-button:hover {
+  background-color: #df7b7b;
+  color: #fff;
+}
+
+.hide {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s;
+}
+.mmm {
+    width: 320px;
+    border-radius: 0.75rem;
+   background-color: #fff; 
+    color: rgb(181, 9, 9);
+    padding: 2rem;
+}
+
+.bbb {
+    margin-top: 1.5rem;
+
+}
+
+.input-group {
+    margin-top: 0.25rem;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+}
+
+.input-group label {
+    display: block;
+    color: rgb(181, 9, 9);
+    margin-bottom: 4px;
+}
+
+.input-group input {
+    width: 100%;
+    border-radius: 0.375rem;
+    border: 1px solid rgb(121, 0, 0);
+    outline: 0;
+    background-color: #df7b7b;
+    padding: 0.75rem 1rem;
+    color: #121213;
+}
+
+.input-group input::placeholder{
+    color: black;
+}
+.input-group input:focus {
+    border-color: rgb(100, 68, 118);
+}
+.link-button {
+    cursor: pointer;
+    transition: 0.3s;
+    font-size: 16px;
+    margin: 10px;
+    width: 40%;
+    background-color: #c90101;
+    padding: 10px 0;
+    text-align: center;
+    color: #fff;
+    border: none;
+    border-radius: 99px;
+    font-weight: 600;
+}
+
+.link-button:hover {
+    background-color: #df7b7b;
+}
+@media (max-width: 600px) {
+    body {
+        padding: 5px;
+    }
+
+    .mmm {
+        padding: 15px 20px;
+        border-radius: 10px;
+        max-width: 90%;
+    }
+
+    .mmm h1 {
+        font-size: 30px;
+    }
+
+    .mmm p {
+        font-size: 12px;
+    }
+
+    .mmm input, .mmm button {
+        font-size: 0.9rem;
+        padding: 0.6rem;
+    }
+
+    .back-button {
+        padding: 0.4rem 0.8rem;
+        font-size: 0.8rem;
+        margin: 0;
+    }
+}

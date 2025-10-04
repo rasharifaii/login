@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Login Page</title>
+  <link rel="stylesheet" href="user.css" />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+  />
+</head>
+
+<body>
+  <div class="form-container">
+    <p class="title">Login</p>
+
+    <form class="form" id="myForm">
+      <div class="input-group">
+        <label for="username">Username or Email</label>
+        <input
+          type="text"
+          name="username"
+          id="username"
+          placeholder="Enter your username"
+        />
+      </div>
+
+      <div class="input-group" style="position: relative;">
+        <label for="password">Password</label>
+        <input
+          type="password"
+          name="password"
+          id="password"
+          placeholder="Enter your password"
+        />
+        <span
+          id="togglePassword"
+          style="position: absolute; top: 32px; right: 26px; cursor: pointer; color: #ccc;"
+          >👁️</span
+        >
+      </div>
+
+      <div class="forgot">
+        <a href="ggg.html">Forgot Password?</a>
+      </div>
+
+      <button class="sign" type="submit">Sign in</button>
+    </form>
+
+    <div class="social-message">
+      <div class="line"></div>
+      <p class="message">Login with social accounts</p>
+      <div class="line"></div>
+    </div>
+
+    <div class="social-icons">
+      <button class="icon" aria-label="Facebook login">
+        <div class="floating-icon" style="color: blue;">
+          <i class="fa-brands fa-facebook"></i>
+        </div>
+        <svg viewBox="0 0 488 512" xmlns="http://www.w3.org/2000/svg">
+          <path d="M488 261.8C488 403.3 391.1 504 249.8 504..." />
+        </svg>
+      </button>
+
+      <button class="icon" aria-label="Google login">
+        <div class="floating-icon" style="color: rgb(216, 185, 204);">
+          <i class="fa-brands fa-google"></i>
+        </div>
+        <svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+          <path d="M459.4 151.7c.3 2.8.3 5.7..." />
+        </svg>
+      </button>
+
+      <button class="icon" aria-label="Apple login">
+        <div class="floating-icon" style="color: rgb(4, 4, 13);">
+          <i class="fa-brands fa-apple"></i>
+        </div>
+        <svg viewBox="0 0 496 512" xmlns="http://www.w3.org/2000/svg">
+          <path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6..." />
+        </svg>
+      </button>
+    </div>
+
+    <p class="signup">
+      Don't have an account?
+      <a href="sss.html">sign up</a>
+    </p>
+  </div>
+
+  <script>
+    const togglePassword = document.getElementById("togglePassword");
+    const passwordInput = document.getElementById("password");
+
+    togglePassword.addEventListener("click", function () {
+      const type =
+        passwordInput.getAttribute("type") === "password" ? "text" : "password";
+      passwordInput.setAttribute("type", type);
+      this.textContent = type === "password" ? "👁️" : "👁️‍🗨️";
+    });
+
+    function isPasswordStrong(password) {
+      const regex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W_]).{8,}$/;
+      return regex.test(password);
+    }
+
+    const form = document.getElementById("myForm");
+    form.addEventListener("submit", function (event) {
+      event.preventDefault();
+
+      // لا يوجد مدخلات email و confirmPassword في النموذج، عدل أو أزل حسب الحاجة
+      const username = document.getElementById("username").value.trim();
+      const password = passwordInput.value.trim();
+
+      if (!username || !password) {
+        alert("Please fill in all the fields!");
+        return;
+      }
+
+      if (!isPasswordStrong(password)) {
+        alert(
+          "Password must be at least 8 characters long and include:\n- Uppercase letter\n- Lowercase letter\n- Number\n- Special character"
+        );
+        return;
+      }
+
+      // إذا كنت تريد تحقق من confirmPassword يجب إضافته في الـ HTML
+
+      // هنا تضع كود إرسال البيانات أو تسجيل الدخول
+      alert("Form submitted successfully!");
+    });
+  </script>
+</body>
+
+</html>
